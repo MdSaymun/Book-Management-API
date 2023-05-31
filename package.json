@@ -1,0 +1,30 @@
+{
+  "name": "book-management-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MdSaymun/Book-Management-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MdSaymun/Book-Management-API/issues"
+  },
+  "homepage": "https://github.com/MdSaymun/Book-Management-API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.2",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "mongoose": "^7.2.2",
+    "morgan": "^1.10.0"
+  }
+}
