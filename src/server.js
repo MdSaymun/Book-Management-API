@@ -13,7 +13,10 @@ dotenv.config({
 // database connect
 dbConnect();
 
+// port
+const port = process.env.PORT || 8000;
+
 // server listen
-app.listen(process.env.PORT, () => {
-  console.log(`server is running on port ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`server is running on port ${port}`);
 });
