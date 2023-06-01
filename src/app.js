@@ -5,7 +5,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 
 // internal imports
-const bookRouter = require("./routes/book.route");
+const bookRouter = require("./routes/book.routes");
+const { notFoundHandler, errorHandler } = require("./middleware/errorHandlers");
 
 // creating express app
 const app = express();
@@ -24,21 +25,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/v1/books", bookRouter);
 
 // 404 not found handler
-app.use((req, res, next) => {
-  next({
-    message: "Your requested content was not found!",
-  });
-});
+app.use(notFoundHandler);
 
 // error handler
-app.use((err, req, res, next) => {
-  if (res.headersSent) {
-    return next(err);
-  }
-  res.status(500).send({
-    message: "There was a server side error",
-    error: err.message,
-  });
-});
+app.use(errorHandler);
 
 module.exports = app;
